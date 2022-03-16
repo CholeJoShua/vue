@@ -32,12 +32,13 @@ export default {
   name: "Header",
   data() {
     return {
-      user: localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : {}
+      
     }
   },
   props: {
     collapseBtnClass: String,
-    collapse: Boolean
+    collapse: Boolean,
+    user: Object
   },
   computed: {
     currentPathName () {
