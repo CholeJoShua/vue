@@ -85,7 +85,7 @@ export default {
                         name: this.name,
                     }
                 }).then(res => {
-                    console.log(res)
+                    //console.log(res)
 
                     this.tableData = res.data.records
                     this.total = res.data.total
