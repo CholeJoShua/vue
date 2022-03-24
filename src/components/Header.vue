@@ -55,9 +55,9 @@ export default {
       this.$store.commit("logout")
       this.$message.success("退出成功")
     },
-    collapse(){
-      // this.collapse = !this.
-    }
+    // collapse(){
+    //   // this.collapse = !this.
+    // }
   }
   
 }

@@ -30,7 +30,11 @@ const router = new VueRouter({
   const storeMenus = localStorage.getItem("menus");
   if(storeMenus){
     //拼装动态路由
-    const manageRoute = {path: '/',name:'Manage',component: () => import('../views/Manage.vue'),redirect: "/home",children: []}
+    const manageRoute = {path: '/',name:'Manage',component: () => import('../views/Manage.vue'),redirect: "/home",children: [
+      {path:'person',name:'个人信息',component:() =>import('../views/Person.vue')}
+
+    ]}
+
     const menus = JSON.parse(storeMenus)
     menus.forEach(item => {
       if(item.path){      //当且仅当path不为空
@@ -66,6 +70,18 @@ setRoutes()
 router.beforeEach((to, from, next) => {
   localStorage.setItem("currentPathName", to.name)  // 设置当前的路由名称，为了在Header组件中去使用
   store.commit("setPath")  // 触发store的数据更新
+
+  //未找到路由情况
+  // if(!to.matched.length){
+  //   const storeMenus = localStorage.getItem("menus")
+  //   console.log(storeMenus);
+  //   if (storeMenus) {
+  //     next("/login")
+  //   }
+  //   else{
+  //     next("/login")
+  //   }
+  // }
   next()  // 放行路由
 })
 

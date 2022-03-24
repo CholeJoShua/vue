@@ -211,6 +211,7 @@
                 })
 
                 this.request.get("/role/roleMenu/" + this.roleId).then(res => {
+                    this.menuDialogVis = true
                     //console.log(res)
                     this.checks = res.data
 
@@ -223,7 +224,7 @@
                         })
                        
                     })
-                     this.menuDialogVis = true
+                     
                 })
             },
             
