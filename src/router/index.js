@@ -45,6 +45,7 @@ export const resetRouter = () =>{
   const storeMenus = localStorage.getItem("menus");
   if(storeMenus){
     
+    
 
     //获取当前的路由对象名称数组
     const currentRouteNames = router.getRoutes().map(v => v.name)
