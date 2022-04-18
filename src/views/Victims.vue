@@ -58,7 +58,7 @@
       </el-pagination>
     </div>
 
-    <el-dialog title="受伤人员信息" :visible.sync="dialogFormVisible" width="40%">
+    <el-dialog title="遇难人员信息" :visible.sync="dialogFormVisible" width="40%">
       <el-form label-width="160px" size="small">
         <el-form-item label="姓名">
           <el-input v-model="form.name" autocomplete="off"></el-input>

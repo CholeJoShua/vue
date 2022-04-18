@@ -34,10 +34,10 @@
             <el-table-column prop="sname" label="所在安置场所" ></el-table-column>
             <el-table-column prop="name" label="姓名+帐篷编号" ></el-table-column>
             <!-- <el-table-column prop="sex" label="性别"></el-table-column> -->
-            <el-table-column prop="idCard" label="身份证号"></el-table-column>
+            <el-table-column prop="idCard" label="身份证号" ></el-table-column>
             <el-table-column prop="tel" label="联系方式"></el-table-column>
             <el-table-column prop="address" label="家庭地址"></el-table-column>
-            <el-table-column prop="family" label="家庭成员(姓名+身份证号)"></el-table-column>
+            <el-table-column prop="family" label="家庭成员(姓名+身份证号)" ></el-table-column>
 
 
 
@@ -83,8 +83,8 @@
                     <el-input v-model="form.address" autocomplete="off"></el-input>
                 </el-form-item>
 
-                <el-form-item label="家庭成员(姓名+身份证号)">
-                    <el-input type="textarea" v-model="form.family" autocomplete="off"></el-input>
+                <el-form-item label="家庭成员(姓名+身份证号)" >
+                    <el-input type="textarea" v-model="form.family" autocomplete="off" ></el-input>
                 </el-form-item>
 
 

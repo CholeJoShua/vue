@@ -3,16 +3,12 @@
         <div style="margin: 10px 0">
             <el-input style="width: 200px" placeholder="请输入名称" suffix-icon="el-icon-search" v-model="name">
             </el-input>
-            <!-- <el-input style="width: 200px" placeholder="请输入邮箱" suffix-icon="el-icon-message" class="ml-5"
-                v-model="email"></el-input>
-            <el-input style="width: 200px" placeholder="请输入地址" suffix-icon="el-icon-position" class="ml-5"
-                v-model="address"></el-input> -->
             <el-button class="ml-5" type="primary" @click="load">搜索</el-button>
             <el-button type="warning" @click="reset">重置</el-button>
         </div>
 
         <div style="margin: 10px 0">
-            <el-button type="primary" @click="handleAdd">新增 <i class="el-icon-circle-plus-outline"></i></el-button>
+            <el-button type="primary" @click="handleAddd">新增 <i class="el-icon-circle-plus-outline"></i></el-button>
             <el-popconfirm class="ml-5" confirm-button-text='确定' cancel-button-text='我再想想' icon="el-icon-info"
                 icon-color="red" title="您确定批量删除这些数据吗？" @confirm="delBatch">
                 <el-button type="danger" slot="reference">批量删除 <i class="el-icon-remove-outline"></i></el-button>
@@ -106,6 +102,10 @@
                     }
                 }).then(res => {
                     this.tableData = res.data
+                }),
+                 // 请求图标的数据
+                this.request.get("/menu/icons").then(res => {
+                    this.options = res.data
                 })
             },
             save() {
@@ -119,6 +119,10 @@
                     }
                 })
             },
+            handleAddd() {
+                this.dialogFormVisible = true
+                this.form = {}
+            },
             handleAdd(pid) {
                 this.dialogFormVisible = true
                 this.form = {}
@@ -130,10 +134,7 @@
                 this.form = row
                 this.dialogFormVisible = true
 
-                // 请求图标的数据
-                this.request.get("/menu/icons").then(res => {
-                    this.options = res.data
-                })
+               
             },
             del(id) {
                 this.request.delete("/menu/" + id).then(res => {

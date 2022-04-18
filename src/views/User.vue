@@ -187,9 +187,9 @@
                 this.pageNum = pageNum
                 this.load()
             },
-            exp() {
-	        window.open("http://localhost:9090/user/export")
-            },
+                exp() {
+                window.open("http://localhost:9090/user/export")
+                },
             handleExcelImportSuccess() {
             this.$message.success("导入成功")
             this.load()
