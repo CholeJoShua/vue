@@ -39,12 +39,10 @@ export const resetRouter = () =>{
   })
 }
 
-
 // ***刷新页面会重置路由
  export const setRoutes = () =>{
   const storeMenus = localStorage.getItem("menus");
   if(storeMenus){
-    
     
 
     //获取当前的路由对象名称数组
@@ -90,7 +88,6 @@ router.beforeEach((to, from, next) => {
   //未找到路由情况
   if(!to.matched.length){
     const storeMenus = localStorage.getItem("menus")
-    // console.log(storeMenus);
     if (storeMenus) {
       next("/404")
     }
